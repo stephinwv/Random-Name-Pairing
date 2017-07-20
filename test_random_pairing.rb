@@ -5,17 +5,17 @@ require_relative "random_pairing.rb"
 class TestPairingNames < Minitest::Test 
 def test_pair	
     names = ["Katie", "Derick", "Steph", "Ty"]
-    results = pairs(names)
+    results = pair(names)
     assert_equal(2, results.count)
   end
   def test_multiple_pairs
-    names = ["Katie", "Derick", "Steph", "Ty", "Chris", "Robert", "Marcus", "Aaron", "Derrick G.", "Andrew", "Adrian", "John", "Steven", "Tori", "Tyler", "Mike"]
-    results = pairs(names)
-    assert_equal(8, results.count)
+    names = ["Katie", "Beard", "Steph", "Ty", "Chris", "Robert", "Marcus", "Aaron", "Derrick G.", "Andrew", "Adrian", "John", "Steven", "Tori"]
+    results = pair(names)
+    assert_equal(7, results.count)
 end
-  def test_with_odd
-    p names = ["Max", "Katie", "Derick", "Steph", "Ty", "Chris", "Robert", "Marcus", "Aaron", "Derrick G.", "Andrew", "Adrian", "John", "Steven", "Tori", "Tyler", "Mike"]
-    p results = pairs(names)
-    p assert_equal(8, results.count)
+  def test_odd_ball
+    p names = ["Katie", "Beard", "Steph", "Ty", "Chris", "Robert", "Mark", "Aaron", "Derrick G.", "Andrew", "Adrian", "John", "Steven", "Tori", "Tyler"]
+    p results = pair(names)
+    p assert_equal(7, results.count)
   end
   end 
