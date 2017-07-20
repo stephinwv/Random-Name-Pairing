@@ -20,7 +20,8 @@ def pair(names)
 	#Creates an empty array to hold objects later called
 	array_paired_names = names.shuffle.each_slice(2)
 	#Shuffles the names to create random picks, 
-	#takes the results and puts them in an array of (2)
+	#takes the results and slices out 2, 
+	#puts them in an array of (2)
 	#creating the pairs
 
 	array_paired_names.each do |pair|
@@ -29,9 +30,9 @@ def pair(names)
 			array << pair
 			#if the number of names is 2, print the pair
 		else
-			array.last << pair
+			(array.last << pair).flatten!
 			#if there is a remainder, pushes the last array(of one)
-			#into the last returned pair
+			#into the last returned pair, .flatten! changes it to part of the string
 		end
 	end
 	array
